@@ -1,0 +1,11 @@
+*.py[cod]
+__pycache__/
+*.so
+.Python
+env/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.DS_Store
