@@ -1,30 +1,24 @@
-# fastapi-tests
+# FastAPI Testing Recipes & Toolkit
 
-[![CI](https://img.shields.io/badge/CI-passing-brightgreen.svg)]()
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python](https://img.shields.io/badge/python-3.9%20%7C%203.10-blue.svg)]()
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.88-teal.svg)]()
+[![Test Suite](https://github.com/joaquinlarra/fastapi-tests/actions/workflows/tests.yml/badge.svg)](https://github.com/joaquinlarra/fastapi-tests/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Python: 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 
-A reference test suite and pattern guide for unit, integration, and contract testing of FastAPI microservices.
+Curated collection of testing patterns, reusable fixtures, and recipes for building bulletproof FastAPI microservices.
 
-## Patterns Included
+## Recipes Included
+1. **Async & Sync Test Clients**: Best practices using `httpx.AsyncClient` and `starlette.testclient.TestClient`.
+2. **Dependency Overrides**: Swapping out database sessions (`app.dependency_overrides`) with ephemeral SQLite engines.
+3. **External Service Mocking**: Isolated HTTP and gRPC mocks using `unittest.mock`.
+4. **Authentication & JWT**: Generating valid and expired tokens for role-based authorization tests.
+5. **Background Tasks**: Verifying async task queues without executing real I/O.
+6. **Rate Limiting & Headers**: Asserting rate-limiting headers and `429 Too Many Requests` behavior.
 
-1. **Synchronous Testing**: Using `fastapi.testclient.TestClient`.
-2. **Asynchronous Testing**: Non-blocking end-to-end testing with `httpx.AsyncClient`.
-3. **Authentication Fixtures**: Bearer token injection and unauthorized header validation.
-4. **Database Isolation**: Fixtures guaranteeing atomic state cleanup between test cases.
-5. **Schema Validation**: Testing HTTP 422 edge cases and boundary conditions.
-
----
-
-## Running the Tests
+## Running Tests
 
 ```bash
-pip install -r requirements.txt
 pytest -v
 ```
 
----
-
 ## License
-MIT © [Joaquin Astelarra](https://github.com/joaquinlarra)
+MIT License (c) 2022-2023 Joaquin Astelarra.
